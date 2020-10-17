@@ -133,7 +133,11 @@ int wmain(int argc, wchar_t **argv);
 
 #endif /* !_WIN32 */
 
+#ifdef __CYGWIN__
+extern __IMPORT char *program_invocation_name; /* Declared in sys/errno.h */
+#else /* __CYGWIN__ */
 extern const tchar *program_invocation_name;
+#endif/* ! __CYGWIN__ */
 
 void _printf(1, 2) msg(const char *fmt, ...);
 void _printf(1, 2) msg_errno(const char *fmt, ...);

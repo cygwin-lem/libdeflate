@@ -54,7 +54,9 @@
 #endif
 
 /* The invocation name of the program (filename component only) */
+#ifndef __CYGWIN__
 const tchar *program_invocation_name;
+#endif
 
 static void
 do_msg(const char *format, bool with_errno, va_list va)
